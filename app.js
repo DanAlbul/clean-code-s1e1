@@ -108,7 +108,7 @@ var deleteTask=function(){
 
     var listItem=this.parentNode;
     const name = listItem.querySelector('.tasks__name');
-    name.classList.add('tasks__name_completed');
+    name.classList.remove('tasks__name_completed');
     var ul=listItem.parentNode;
     //Remove the parent list item from the ul.
     ul.removeChild(listItem);
@@ -122,7 +122,7 @@ var taskCompleted=function(){
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
     const name = listItem.querySelector('.tasks__name');
-    name.classList.remove('tasks__name_completed');
+    name.classList.add('tasks__name_completed');
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 }
@@ -134,6 +134,8 @@ var taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
+    const name = listItem.querySelector('.tasks__name');
+    name.classList.remove('tasks__name_completed');
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
