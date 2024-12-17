@@ -156,6 +156,14 @@ button {
   margin: 0 10px;
 }
 
+.github_link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: red;
+  font-size: 24px;
+}
+
 .tasks__name {
   width: 56%;
   display: inline-block;
